@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.Nova — Premium Portfolio</title>
+    <meta name="description" content="D.Nova — A visionary developer blending design and engineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="glow-bg"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Thokala Kumar Reddy</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#connect">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-intro anim-fade-left">
+                    <h1 class="main-title" id="hero-title">Hello.</h1>
+                    <p class="sub-title" id="hero-subtitle">It's <span>Thokala Kumar Reddy</span>, a specialized design wizard.</p>
+                </div>
+            </div>
+            <div class="hero-right anim-fade-right">
+                <div class="portrait-wrap" id="portrait-wrap">
+                    <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=900&auto=format&fit=crop" alt="Thokala Kumar Reddy Portrait" class="portrait-img" id="portrait-img">
+                    <!-- Upload overlay (only shows in admin mode) -->
+                    <label class="portrait-upload-overlay" id="portrait-upload-label" title="Change Photo">
+                        <span>📷 Change Photo</span>
+                        <input type="file" id="portrait-file-input" accept="image/*" style="display:none;">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-grid">
+                <p class="about-text reveal" id="about-desc">I'm a visionary developer who blends striking visual design with robust engineering. Specializing in scroll-driven storytelling and immersive digital experiences, my focus is on crafting premium, interactive web applications that leave a lasting impression.</p>
+                <div class="about-stats">
+                    <div class="about-stat reveal">
+                        <span class="big-num" id="about-stat1">1+ Year</span>
+                        <span class="label" id="about-stat1-label">Learning Journey</span>
+                    </div>
+                    <div class="about-stat reveal">
+                        <span class="big-num" id="about-stat2">10+</span>
+                        <span class="label" id="about-stat2-label">Projects Completed</span>
+                    </div>
+                    <div class="about-stat reveal">
+                        <span class="big-num" id="about-stat3">100%</span>
+                        <span class="label" id="about-stat3-label">Passionate Commitment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Skills</h2>
+            <div class="skills-grid" id="skills-grid">
+                <span class="skill-text-chip reveal">UI/UX Architecture</span>
+                <span class="skill-text-chip reveal">Frontend Development</span>
+                <span class="skill-text-chip reveal">Vanilla JavaScript</span>
+                <span class="skill-text-chip reveal">HTML5 & CSS3</span>
+                <span class="skill-text-chip reveal">Motion Engineering</span>
+                <span class="skill-text-chip reveal">Performance Optimization</span>
+                <span class="skill-text-chip reveal">Responsive Design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Aura FinTech" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>Aura FinTech Dashboard</h3>
+                        <p>A next-generation financial interface for high-frequency traders, featuring real-time data visualization.</p>
+                        <a href="#" class="project-link">See Live Link →</a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop" alt="Lumina" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>Lumina E-Commerce</h3>
+                        <p>An elite headless e-commerce experience for a luxury fashion brand with blazing-fast checkout flows.</p>
+                        <a href="#" class="project-link">See Live Link →</a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop" alt="Nexus" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>Nexus Web3 Platform</h3>
+                        <p>A decentralized portal with premium visual design, integrating Web3 authentication and smart contracts.</p>
+                        <a href="#" class="project-link">See Live Link →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title reveal">Experience</h2>
+            <div class="timeline" id="experience-timeline">
+                <div class="timeline-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-body">
+                        <span class="tl-date">2024 – Present</span>
+                        <h3>Junior Developer Intern</h3>
+                        <h4>Thokala Kumar Reddy Projects</h4>
+                        <p>Leading the development of a premium personal portfolio CMS, focusing on architectural integrity and minimalist aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="timeline" id="education-timeline">
+                <div class="timeline-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-body">
+                        <span class="tl-date">2010 – 2014</span>
+                        <h3>BSc in Computer Science</h3>
+                        <h4>University of Technology</h4>
+                        <p>Graduated with Honors. Specialized in Human-Computer Interaction and Advanced Web Technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-body">
+                        <span class="tl-date">2015</span>
+                        <h3>Advanced UI/UX Certification</h3>
+                        <h4>Design Institute</h4>
+                        <p>Intensive program focused on user-centered design, wireframing, and interactive prototyping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="section" id="resume">
+        <div class="container center-content">
+            <h2 class="section-title reveal">Curriculum Vitae</h2>
+            <p class="resume-desc reveal" id="resume-desc">Interested in the finer details of my career? Download my full digital resume below.</p>
+            <div class="resume-actions reveal" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
+                <a href="#" class="btn-primary" id="resume-link">Download Resume v2.0</a>
+                <a href="#" class="btn-secondary" id="resume-view" target="_blank">Show Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="connect">
+        <div class="container">
+            <div class="connect-grid">
+                <div class="connect-info reveal">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <h3 id="connect-title">Get in Touch</h3>
+                    <p id="connect-desc">Have a project in mind or just want to say hello? I'm always open to discussing new ideas and opportunities.</p>
+                    <div class="socials" id="socials-list">
+                        <a href="#" target="_blank" class="social-chip" id="soc-linkedin">LinkedIn</a>
+                        <a href="#" target="_blank" class="social-chip" id="soc-github">GitHub</a>
+                        <a href="#" target="_blank" class="social-chip" id="soc-leetcode">LeetCode</a>
+                        <a href="#" target="_blank" class="social-chip" id="soc-instagram">Instagram</a>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/kumarreddythokala13@gmail.com" method="POST">
+                    <div class="form-field">
+                        <input type="text" id="c-name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" id="c-email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-field">
+                        <textarea id="c-message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 D.Nova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Controls -->
+    <div class="admin-fab" id="admin-fab">
+        <button class="fab-verify" id="fab-verify" title="Verify Admin">🔑</button>
+        <button class="fab-edit" id="fab-edit" title="Edit Website" style="display:none;">✏️</button>
+    </div>
+
+    <!-- Admin Modal -->
+    <div class="modal-overlay" id="admin-modal" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Content Manager</h2>
+                <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="modal-tabs" role="tablist">
+                <button class="tab-btn active" data-tab="tab-hero" role="tab">Hero / About</button>
+                <button class="tab-btn" data-tab="tab-skills" role="tab">Skills</button>
+                <button class="tab-btn" data-tab="tab-projects" role="tab">Projects</button>
+                <button class="tab-btn" data-tab="tab-timeline" role="tab">Timeline</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="modal-body">
+
+                <!-- Hero / About Tab -->
+                <div class="tab-pane active" id="tab-hero">
+                    <div class="field-group">
+                        <label>Main Title (e.g. Hello)</label>
+                        <input type="text" id="f-hero-title" class="m-input">
+                    </div>
+                    <div class="field-group">
+                        <label>Sub Title</label>
+                        <input type="text" id="f-hero-subtitle" class="m-input">
+                    </div>
+                    <hr class="divider">
+                    <div class="field-group">
+                        <label>About Me Description</label>
+                        <textarea id="f-about-desc" class="m-input" rows="5"></textarea>
+                    </div>
+                    <hr class="divider">
+                    <h4 class="list-category-title">About Stats</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px; margin-bottom: 15px;">
+                        <input type="text" id="f-about-stat1" class="m-input" placeholder="Value">
+                        <input type="text" id="f-about-stat1-label" class="m-input" placeholder="Label">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px; margin-bottom: 15px;">
+                        <input type="text" id="f-about-stat2" class="m-input" placeholder="Value">
+                        <input type="text" id="f-about-stat2-label" class="m-input" placeholder="Label">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px;">
+                        <input type="text" id="f-about-stat3" class="m-input" placeholder="Value">
+                        <input type="text" id="f-about-stat3-label" class="m-input" placeholder="Label">
+                    </div>
+                    <hr class="divider">
+                    <div class="field-group">
+                        <label>Resume Description</label>
+                        <textarea id="f-resume-desc" class="m-input" rows="2"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label>Resume Button Text (e.g. Download Resume v2.0)</label>
+                        <input type="text" id="f-resume-label" class="m-input">
+                    </div>
+                    <hr class="divider">
+                    <div class="field-group">
+                        <label>Resume File (PDF/DOC)</label>
+                        <label class="img-upload-btn" style="background:#0044cc; color:#fff;">📁 Click to Upload Resume
+                            <input type="file" id="f-resume-file" style="display:none;" accept=".pdf,.doc,.docx">
+                        </label>
+                        <p id="resume-status" style="font-size:0.8rem; margin-top:5px; color:var(--muted)">No file uploaded.</p>
+                        <input type="hidden" id="f-resume-data">
+                    </div>
+                    
+                    <hr class="divider">
+                    <h4 class="list-category-title">Social Profiles</h4>
+                    <div class="field-group">
+                        <label>LinkedIn URL</label>
+                        <input type="text" id="f-soc-linkedin" class="m-input" placeholder="https://linkedin.com/in/username">
+                    </div>
+                    <div class="field-group">
+                        <label>GitHub URL</label>
+                        <input type="text" id="f-soc-github" class="m-input" placeholder="https://github.com/username">
+                    </div>
+                    <div class="field-group">
+                        <label>LeetCode URL</label>
+                        <input type="text" id="f-soc-leetcode" class="m-input" placeholder="https://leetcode.com/u/username">
+                    </div>
+                    <div class="field-group">
+                        <label>Instagram URL</label>
+                        <input type="text" id="f-soc-instagram" class="m-input" placeholder="https://instagram.com/username">
+                    </div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div class="tab-pane" id="tab-skills">
+                    <div class="field-group">
+                        <label>Skills (Comma separated, e.g. HTML, CSS, JS)</label>
+                        <textarea id="f-skills-text" class="m-input" rows="10" placeholder="HTML, CSS, JavaScript, React..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Projects Tab -->
+                <div class="tab-pane" id="tab-projects">
+                    <button class="add-btn" id="add-project-btn">+ Add New Project</button>
+                    <div class="edit-list" id="projects-edit-list"></div>
+                </div>
+
+                <!-- Timeline Tab -->
+                <div class="tab-pane" id="tab-timeline">
+                    <h4 class="list-category-title">Professional Experience</h4>
+                    <button class="add-btn" id="add-exp-btn">+ Add Experience</button>
+                    <div class="edit-list" id="exp-edit-list"></div>
+                    
+                    <hr class="divider">
+                    <h4 class="list-category-title">Education</h4>
+                    <button class="add-btn" id="add-edu-btn">+ Add Education</button>
+                    <div class="edit-list" id="edu-edit-list"></div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-save" id="btn-save">💾 Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
