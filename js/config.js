@@ -7,7 +7,7 @@
 
 const CMS_CONFIG = {
     hero: {
-        title: "Hello.",
+        title: "Hello World",
         subtitle: "It's Thokala Kumar Reddy, a specialized design wizard."
     },
     about: {

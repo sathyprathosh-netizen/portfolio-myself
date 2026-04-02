@@ -97,9 +97,38 @@
     var STORE_KEY = 'dnova_cms_v2';
 
     function loadDataObj() {
+        var local = {};
         try {
-            return JSON.parse(localStorage.getItem(STORE_KEY)) || {};
-        } catch(e) { return {}; }
+            local = JSON.parse(localStorage.getItem(STORE_KEY)) || {};
+        } catch(e) {}
+        
+        // If local is mostly empty, use CMS_CONFIG as the absolute truth for live deployment
+        if (window.CMS_CONFIG && !local.heroTitle) {
+            var c = window.CMS_CONFIG;
+            if (c.hero) {
+                local.heroTitle = c.hero.title;
+                local.heroSubtitle = c.hero.subtitle;
+            }
+            if (c.about) {
+                local.aboutDesc = c.about.description;
+                local.aboutStats = c.about.stats;
+            }
+            local.skills = c.skills;
+            local.projects = c.projects;
+            local.experience = c.experience;
+            local.education = c.education;
+            if (c.resume) {
+                local.resumeDesc = c.resume.description;
+                local.resumeLabel = c.resume.buttonText;
+                local.resumeData = c.resume.fileData;
+                local.resumeFileName = c.resume.fileName;
+            }
+            local.socials = c.socials;
+            if (c.portrait) {
+                local.portraitSrc = c.portrait.src;
+            }
+        }
+        return local;
     }
 
     function loadSaved() {
@@ -663,6 +692,57 @@
             initReveal();
             closeModal();
             showToast('All changes saved locally!');
+        });
+    }
+
+    var btnExport = document.getElementById('btn-export');
+    if (btnExport) {
+        btnExport.addEventListener('click', function() {
+            var data = loadDataObj();
+            var exportObj = {
+                hero: {
+                    title: data.heroTitle || (window.CMS_CONFIG && window.CMS_CONFIG.hero ? window.CMS_CONFIG.hero.title : ''),
+                    subtitle: data.heroSubtitle || (window.CMS_CONFIG && window.CMS_CONFIG.hero ? window.CMS_CONFIG.hero.subtitle : '')
+                },
+                about: {
+                    description: data.aboutDesc || '',
+                    stats: data.aboutStats || []
+                },
+                skills: data.skills || [],
+                projects: data.projects || [],
+                experience: data.experience || [],
+                education: data.education || [],
+                resume: {
+                    description: data.resumeDesc || '',
+                    buttonText: data.resumeLabel || '',
+                    fileData: data.resumeData || '',
+                    fileName: data.resumeFileName || ''
+                },
+                socials: data.socials || {},
+                portrait: {
+                    src: data.portraitSrc || ''
+                }
+            };
+            
+            var jsContent = "/* ============================================================\n" +
+                            "   Portfolio Configuration — js/config.js\n" +
+                            "   ------------------------------------------------------------\n" +
+                            "   This file stores your permanent portfolio data. \n" +
+                            "   When you deploy to Vercel, this is what the public sees.\n" +
+                            "   ============================================================ */\n\n" +
+                            "const CMS_CONFIG = " + JSON.stringify(exportObj, null, 4) + ";\n\n" +
+                            "window.CMS_CONFIG = CMS_CONFIG;\n";
+
+            var blob = new Blob([jsContent], {type: "text/javascript"});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "config.js";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast("config.js downloaded! Replace your js/config.js file with this one, then push to GitHub.");
         });
     }
 
