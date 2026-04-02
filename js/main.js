@@ -279,6 +279,7 @@
         }
         tl.style.display = 'block';
         tl.innerHTML = arr.map(function (item) {
+            var gradeHtml = item.grade ? '<span class="tl-grade" style="display:inline-block; margin-top:5px; padding:3px 8px; background:rgba(0,168,107,0.1); color:var(--primary); border-radius:4px; font-weight:600; font-size:0.85rem;">' + escHtml(item.grade) + '</span>' : '';
             return '<div class="timeline-item reveal">' +
                 '<div class="tl-dot"></div>' +
                 '<div class="tl-body">' +
@@ -286,6 +287,7 @@
                     '<h3>' + escHtml(item.role) + '</h3>' +
                     '<h4>' + escHtml(item.org) + '</h4>' +
                     '<p>' + escHtml(item.desc) + '</p>' +
+                    gradeHtml +
                 '</div>' +
             '</div>';
         }).join('');
@@ -379,7 +381,8 @@
                 date: (item.querySelector('.tl-date') || {}).textContent || '',
                 role: (item.querySelector('h3')       || {}).textContent || '',
                 org:  (item.querySelector('h4')       || {}).textContent || '',
-                desc: (item.querySelector('p')        || {}).textContent || ''
+                desc: (item.querySelector('p')        || {}).textContent || '',
+                grade: (item.querySelector('.tl-grade') || {}).textContent || ''
             });
         });
         return arr;
@@ -565,6 +568,9 @@
 
     function addTimelineCard(listId, t) {
         t = t || {};
+        var isEdu = listId === 'edu-edit-list';
+        var gradeField = isEdu ? '<div class="field-group"><label>Percentage / CGPA</label><input type="text" class="m-input c-grade" value="' + escHtml(t.grade || '') + '" placeholder="e.g. 85% or 8.5 CGPA"></div>' : '';
+        
         var card = document.createElement('div');
         card.className = 'edit-card';
         card.innerHTML =
@@ -575,6 +581,7 @@
             '<input type="text" class="m-input c-role" value="' + escHtml(t.role || '') + '"></div>' +
             '<div class="field-group"><label>Company / Institution</label>' +
             '<input type="text" class="m-input c-org" value="' + escHtml(t.org || '') + '"></div>' +
+            gradeField +
             '<div class="field-group"><label>Description</label>' +
             '<textarea class="m-input c-desc" rows="3">' + escHtml(t.desc || '') + '</textarea></div>';
 
@@ -664,7 +671,8 @@
                     date: (card.querySelector('.c-date') || {}).value || '',
                     role: (card.querySelector('.c-role') || {}).value || '',
                     org:  (card.querySelector('.c-org')  || {}).value || '',
-                    desc: (card.querySelector('.c-desc') || {}).value || ''
+                    desc: (card.querySelector('.c-desc') || {}).value || '',
+                    grade: (card.querySelector('.c-grade') || {}).value || ''
                 });
             });
             data.education = eduData;

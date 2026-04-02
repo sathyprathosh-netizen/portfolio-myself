@@ -60,13 +60,15 @@ const CMS_CONFIG = {
             date: "2010 – 2014",
             role: "BSc in Computer Science",
             org: "University of Technology",
-            desc: "Graduated with Honors. Specialized in Human-Computer Interaction and Advanced Web Technologies."
+            desc: "Graduated with Honors. Specialized in Human-Computer Interaction and Advanced Web Technologies.",
+            grade: "8.5 CGPA"
         },
         {
             date: "2015",
             role: "Advanced UI/UX Certification",
             org: "Design Institute",
-            desc: "Intensive program focused on user-centered design, wireframing, and interactive prototyping."
+            desc: "Intensive program focused on user-centered design, wireframing, and interactive prototyping.",
+            grade: "90%"
         }
     ],
     resume: {
